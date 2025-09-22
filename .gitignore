@@ -1,0 +1,62 @@
+# --- Entorno virtual ---
+.venv/
+env/
+venv/
+
+# --- Archivos de Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.pkl
+*.egg-info/
+*.egg
+*.manifest
+*.spec
+
+# --- Archivos de logs y runtime ---
+*.log
+*.pot
+*.py[cod]
+*.db
+*.sqlite3
+
+# --- Archivos temporales / caché ---
+*.tmp
+*.swp
+*.swo
+*.bak
+*.orig
+*.old
+*.retry
+.DS_Store
+Thumbs.db
+
+# --- Configuración de IDEs ---
+.vscode/
+.idea/
+*.code-workspace
+
+# --- Archivos de entorno y secretos ---
+.env
+.env.*
+!.env.example
+
+# --- Dependencias ---
+pip-wheel-metadata/
+Pipfile.lock
+poetry.lock
+
+# --- Tests ---
+.coverage
+coverage.xml
+.pytest_cache/
+.tox/
+.hypothesis/
+
+# --- Otros ---
+build/
+dist/
+site/
+htmlcov/
