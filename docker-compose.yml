@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fastapi-ae-rf
+    ports:
+      - "8000:8000"
+    environment:
+      # Variables de entorno (puedes sobreescribirlas con .env)
+      - APP_NAME=Backend AE-RF
+      - API_PREFIX=/api
+      - CORS_ORIGINS=["http://localhost:4200","http://localhost:3000"]
+    volumes:
+      # Opcional: montar código en desarrollo para hot-reload
+      # - ./app:/app/app
+      # Si usas volúmenes, cambia CMD en Dockerfile a uvicorn con --reload
+      - ./app:/app/app:ro  # read-only para producción simulada
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+# Opcional: agregar nginx como reverse proxy
+#  nginx:
+#    image: nginx:alpine
+#    container_name: nginx-proxy
+#    ports:
+#      - "80:80"
+#    volumes:
+#      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+#    depends_on:
+#      - backend
