@@ -12,7 +12,7 @@ services:
       # Variables de entorno (puedes sobreescribirlas con .env)
       - APP_NAME=Backend AE-RF
       - API_PREFIX=/api
-      - CORS_ORIGINS=["http://localhost:4200","http://localhost:3000"]
+      - CORS_ORIGINS=["http://localhost:4200","http://localhost:3000","https://frontend-ae-rf.vercel.app"]
     volumes:
       # Opcional: montar código en desarrollo para hot-reload
       # - ./app:/app/app

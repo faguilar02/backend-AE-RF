@@ -95,6 +95,13 @@ Variables de entorno (`.env` o configuradas en docker-compose):
 - `API_PREFIX`: Prefijo de rutas (default: `/api`)
 - `CORS_ORIGINS`: Lista de orígenes permitidos para CORS
 
+### CORS Configurado para:
+- ✅ Desarrollo local: `http://localhost:4200` (Angular)
+- ✅ Desarrollo alternativo: `http://localhost:3000`
+- ✅ Producción: `https://frontend-ae-rf.vercel.app`
+
+Para modificar orígenes CORS, edita `app/core/config.py` o usa variables de entorno.
+
 ## 📦 Estructura del Proyecto
 
 ```
